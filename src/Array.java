@@ -2,8 +2,6 @@ import java.util.Arrays;
 
 public class Array<T> {
 	private Comparable<T>[] array;// the array that will be sorted
-	private Comparable<T>[] copy;// a copy of the array to compare after sorting--you should never access this in
-						// your code!
 	private Comparable<T>[] extra;// a temporary array in case you use some version of mergesort
 	private int accessCount;
 
@@ -85,8 +83,8 @@ public class Array<T> {
 
 	// checks that the array is sorted
 	public boolean isSorted() {
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] != copy[i])
+		for(int i = 0; i < array.length-1; i++) {
+			if(array[i].compareTo((T) array[i+1]) > 0)
 				return false;
 		}
 		return true;
@@ -104,24 +102,17 @@ public class Array<T> {
 	@Override
 	public String toString() {
 		String build = "Main: [";
-		for (int i = 0; i < array.length; i++) {
+		int i;
+		for (i = 0; i < Math.min(array.length, 1000); i++) {
 			if (i < array.length - 1)
 				build += array[i] + ", ";
 			else
 				build += array[i];
 		}
-		build += "]\n";
-
-		if (this.extra != null) {
-			build += "Extra: [";
-			for (int i = 0; i < extra.length; i++) {
-				if (i < extra.length - 1)
-					build += extra[i] + ", ";
-				else
-					build += extra[i];
-			}
-			build += "]\n";
-		}
+		if(i <= 1001)
+			build += "...rest cut off to make it possible to print!";
+		else
+			build += "]";
 
 		return build;
 	}
