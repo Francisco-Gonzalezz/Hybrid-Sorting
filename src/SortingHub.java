@@ -44,6 +44,8 @@ public class SortingHub {
 		System.out.println("\nSorting...");
 		if (type.equals("tim"))
 			TimSort.sortTimSort(array);
+		else
+			AdvancedQuickSort.sortAdvancedQuickSort(array);
 		
 		long end = System.currentTimeMillis();
 
