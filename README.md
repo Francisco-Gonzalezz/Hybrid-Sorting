@@ -35,8 +35,9 @@ The user will then be prompted to pick a type of data to be used while sorting a
 >📝 You will then be asked how many data points you would like to be sorted and they will be randomly generated for you
 >
 2. String 
->📝 When using String you will need to specify the file needed for getting the data from with a text file. There is one provided call stringTest.txt 
->
+>📝 When using String you will need to specify the file needed for getting the data from with a text file. There is one provided call stringTest.txt...Make sure you enter the filepath correctly when using the String sorting. 
+3. Comparing the Two Algorithms
+>📝 This will show you the amount of access counts for both of the algorithms.
 The console will then output what the original array was and what the array looks like after the sorting is complete. You will also be able to see how many times the array was accessed while sorting.
 
 
