@@ -14,6 +14,7 @@ Our programming portion of the project allows a user to sort a dataset in one of
     - Timsort.java
     - SortingHelpers.java
     - AdvancedQuickSort.java
+    - stringTest.txt
 2. Within Terminal/Powershell run 
     ~~~ 
     javac *.java 
