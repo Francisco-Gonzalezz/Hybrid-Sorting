@@ -109,7 +109,7 @@ public class Array<T> {
 			else
 				build += array[i];
 		}
-		if(i <= Math.min(array.length, 1000))
+		if(i >= 1000)
 			build += "...rest cut off to make it possible to print!";
 		else
 			build += "]";

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class SortingHub {
 
 	public static void main(String[] args) throws FileNotFoundException {
-
+		
 		System.out.println("Welcome to Sorting Hub!\nWe have implemented two algorithms: TimSort and Advanced QuickSort!");
 		System.out.println("Please choose a sorting algorithm\n(tim / advanced)");
 
@@ -60,8 +60,8 @@ public class SortingHub {
 
 	static Array<Integer> createIntegerArrayFromCommandLine(Scanner scanner, String type) {
 		System.out.println("How large do you want the array to be?" + (type.equals("tim")
-				? "\n(Insertion sort only happens on subsets <= " + TimSort.MIN_LEVEL_UNTIL_INSERTION + ")"
-				: ""));
+				? "\n(Insertion sort on subsets <= " + TimSort.MIN_LEVEL_UNTIL_INSERTION + ")"
+				: "\n(Insertion sort on subsets <= " + AdvancedQuickSort.MIN_LEVEL_UNTIL_INSERTION + ")"));
 		int length = scanner.nextInt();
 		System.out.println("Creating the array...");
 
