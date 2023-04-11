@@ -4,26 +4,24 @@ public class Array<T> {
 	private Comparable<T>[] array;// the array that will be sorted
 	private Comparable<T>[] extra;// a temporary array in case you use some version of mergesort
 	private int accessCount;
+	private int comparisons;
 
 	// constructor that takes an int array
 	public Array(Comparable<T>[] array) {
 		this.array = array;
 		this.accessCount = 0;
+		this.comparisons = 0;
 	}
 	
 	public Array(int length) {
 		this.array = new Comparable[length];
 		this.accessCount = 0;
+		this.comparisons = 0;
 	}
 
 	// initialize the extra array
 	public void initExtra(int size) {
 		this.extra = new Comparable[size];
-	}
-
-	// gets a String representation of the array
-	public String toSstring() {
-		return Arrays.toString(array);
 	}
 
 	// gets the length of the array
@@ -56,6 +54,15 @@ public class Array<T> {
 	// returns the accessCount
 	public int getAccessCount() {
 		return accessCount;
+	}
+
+	// returns the accessCount
+	public int getComparisonCount() {
+		return comparisons;
+	}
+	
+	public void madeComparison() {
+		this.comparisons++;
 	}
 	
 	public void resetAccessCount() {
@@ -101,7 +108,7 @@ public class Array<T> {
 
 	@Override
 	public String toString() {
-		String build = "Main: [";
+		String build = "[";
 		int i;
 		for (i = 0; i < Math.min(array.length, 1000); i++) {
 			if (i < array.length - 1)
@@ -115,5 +122,14 @@ public class Array<T> {
 			build += "]";
 
 		return build;
+	}
+	
+	public Array clone() {
+		Array temp = new Array<T>(this.length());
+		for(int i = 0; i < this.array.length; i++) {
+			temp.setVal(i, this.array[i]);
+		}
+		temp.resetAccessCount();
+		return temp;
 	}
 }
