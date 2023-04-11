@@ -4,7 +4,7 @@ public class AdvancedQuickSort {
 	public static int MIN_LEVEL_UNTIL_INSERTION = 10;
 	
 	public static void sortAdvancedQuickSort(Array array) {
-		quicksort(array, 0, array.length());
+		quicksort(array, 0, array.length() - 1);
 	}
 	
 	public static void quicksort( Array array, int start, int end ) {
