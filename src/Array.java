@@ -109,7 +109,7 @@ public class Array<T> {
 			else
 				build += array[i];
 		}
-		if(i <= 1001)
+		if(i >= 1000)
 			build += "...rest cut off to make it possible to print!";
 		else
 			build += "]";
