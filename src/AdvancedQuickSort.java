@@ -7,7 +7,7 @@ public class AdvancedQuickSort {
 		quicksort(array, 0, array.length() - 1);
 	}
 	
-	public static void quicksort( Array array, int start, int end ) {
+	private static void quicksort( Array array, int start, int end ) {
 		if(end-start <= MIN_LEVEL_UNTIL_INSERTION)
 			SortingHelpers.sortInsertionSort(array, start, end);
 		
@@ -28,6 +28,7 @@ public class AdvancedQuickSort {
 
 		for (int index = start; index <= end - 1; index++) {
 			// If current element is less than pivot value
+			array.madeComparison();
 			if (array.getVal( index ).compareTo( val ) < 0 ) {
 				indexHelper++;
 				swap(array, indexHelper, index);

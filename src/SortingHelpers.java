@@ -16,6 +16,7 @@ public class SortingHelpers {
 				Comparable temp = array.getVal( j );
 
 				// break if it is no longer bigger than
+				array.madeComparison();
 				if ( temp.compareTo( current ) <= 0 )
 					break;
 
@@ -42,6 +43,7 @@ public class SortingHelpers {
 		if ( ( end + 1 ) - start == 2 ) {
 			Comparable iVal = array.getVal( i );
 			Comparable jVal = array.getVal( j );
+			array.madeComparison();
 			if ( iVal.compareTo( jVal ) < 0 ) {
 				array.setVal( j, iVal );
 				array.setVal( i, jVal );
@@ -61,6 +63,7 @@ public class SortingHelpers {
 			Comparable jVal = array.getVal( j );
 
 			// if the left number is smaller than the right, place it first
+			array.madeComparison();
 			if ( iVal.compareTo( jVal ) < 0 ) {
 				array.setExtraVal( k, iVal );
 				i++;
