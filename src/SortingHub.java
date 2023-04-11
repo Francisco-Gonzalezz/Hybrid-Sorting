@@ -101,7 +101,4 @@ public class SortingHub {
 		scanner.close();
 		return array;
 	}
-
-	public static void sortAdvancedQuickSort(Array array) {
-	}
 }
